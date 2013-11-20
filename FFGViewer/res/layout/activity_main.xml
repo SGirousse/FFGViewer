@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/buttonShowProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/quickContactBadge1"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="75dp"
+        android:text="@string/text_button_access_profile" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/quickContactBadge1"
+        android:layout_alignLeft="@+id/buttonShowProfile"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="39dp"
+        android:layout_toLeftOf="@+id/quickContactBadge1"
+        android:text="@string/hello" />
+
+    <QuickContactBadge
+        android:id="@+id/quickContactBadge1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="19dp" />
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonShowProfile"
+        android:layout_alignRight="@+id/buttonShowProfile"
+        android:layout_below="@+id/buttonShowProfile"
+        android:layout_marginTop="46dp"
+        android:text="@string/text_button_search" />
+
+    <Button
+        android:id="@+id/buttonGoFFG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonSearch"
+        android:layout_alignRight="@+id/buttonSearch"
+        android:layout_below="@+id/buttonSearch"
+        android:layout_marginTop="52dp"
+        android:text="@string/text_button_access_FFG_website" />
+
+    <Button
+        android:id="@+id/buttonUpdating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonGoFFG"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/buttonGoFFG"
+        android:layout_marginBottom="43dp"
+        android:text="@string/text_button_updating" />
+
+</RelativeLayout>

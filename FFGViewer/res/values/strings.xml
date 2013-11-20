@@ -1,0 +1,21 @@
+<resources>
+
+    <string name="app_name">FFGViewer</string>
+    <string name="menu_settings">Paramètres</string>
+    
+    <string name="title_activity_main">Menu principal</string>
+    
+    <string name="hello">Bonjour</string>
+ 
+    <string name="text_button_access_profile">Accéder à votre profil</string>
+    <string name="text_button_search">Chercher un joueur</string>
+    <string name="text_button_access_FFG_website">Fédération française de Go</string>
+    <string name="text_button_updating">Réactualiser les informations</string>
+    
+    <string name="title_activity_list_player">Sélection d\'un joueur</string>
+    
+    <string name="player_name">Nom</string>
+    <string name="player_surname">Prénom</string>
+    
+    <string name="wait_access_website_ffg">Chargement des données &#8230;</string>
+</resources>
