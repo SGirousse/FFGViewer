@@ -3,14 +3,22 @@ package org.jeudego.ffg;
 import org.jeudego.listeners.AccessFFGButton;
 import org.jeudego.listeners.SearchPlayerButton;
 import org.jeudego.listeners.ShowProfileButton;
-
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.Button;
 
+/**
+ * The main activity, offering option to Go on main
+ * screens and use main features.
+ * 
+ * @author simeon
+ *
+ */
 public class MainActivity extends Activity {
 
+	//Listeners
 	private AccessFFGButton _access_ffg_button;
 	private ShowProfileButton _show_profile_button;
 	private SearchPlayerButton _search_player_button;
@@ -18,8 +26,9 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i("TRACE", "MainActivity *** public void onCreate(Bundle savedInstanceState) ");
         setContentView(R.layout.activity_main);
-                 
+                
         // --- Listeners --- //
         //Web site access
         this._access_ffg_button = new AccessFFGButton(this);
@@ -34,7 +43,7 @@ public class MainActivity extends Activity {
         //Search player
         this._search_player_button = new SearchPlayerButton(this);
         Button search_player_button = (Button) findViewById(R.id.buttonSearch);
-        search_player_button.setOnClickListener(this._search_player_button);        
+        search_player_button.setOnClickListener(this._search_player_button);
         
     }
 

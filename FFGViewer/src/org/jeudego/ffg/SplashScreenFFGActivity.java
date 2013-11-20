@@ -4,7 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
+/**
+ * A splash screen while data are loaded from the FFG web site. It currently wait for 3000 ms.
+ * 
+ * @author simeon
+ *
+ */
 public class SplashScreenFFGActivity extends Activity {
 	 
     // Splash screen timer
@@ -13,6 +20,7 @@ public class SplashScreenFFGActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i("TRACE", "SplashScreenFFGActivity *** public void onCreate(Bundle savedInstanceState) ");
         setContentView(R.layout.activity_ffg_splashscreen);
  
         new Handler().postDelayed(new Runnable() {

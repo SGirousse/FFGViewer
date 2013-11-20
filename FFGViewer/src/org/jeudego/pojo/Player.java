@@ -1,5 +1,12 @@
 package org.jeudego.pojo;
 
+/**
+ * Represent a player entity and it contains all basic informations used to display and
+ * search in the whole app.
+ *  
+ * @author simeon
+ *
+ */
 public class Player {
 	private String _name;
 	private String _surname;

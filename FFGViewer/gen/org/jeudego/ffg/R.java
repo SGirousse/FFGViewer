@@ -16,27 +16,26 @@ public final class R {
         public static final int lg_ffg=0x7f020002;
     }
     public static final class id {
-        public static final int button1=0x7f070007;
-        public static final int buttonGoFFG=0x7f07000c;
-        public static final int buttonSearch=0x7f07000b;
+        public static final int buttonGoFFG=0x7f07000d;
+        public static final int buttonGoSearchPlayer=0x7f070007;
+        public static final int buttonSearch=0x7f07000c;
         public static final int buttonShowProfile=0x7f070009;
-        public static final int buttonUpdating=0x7f07000d;
-        public static final int editText1=0x7f070004;
-        public static final int editText2=0x7f070006;
+        public static final int buttonUpdating=0x7f07000e;
+        public static final int editTextPlayerName=0x7f070004;
+        public static final int editTextPlayerSurname=0x7f070006;
         public static final int imageViewLogoFFG=0x7f070000;
         public static final int linearLayout1=0x7f070002;
-        public static final int listView1=0x7f070008;
-        public static final int menu_settings=0x7f070014;
+        public static final int listViewPlayers=0x7f070008;
+        public static final int menu_settings=0x7f070013;
         public static final int quickContactBadge1=0x7f07000a;
-        public static final int textView1=0x7f070003;
-        public static final int textView2=0x7f070005;
-        public static final int textViewPlayerClub=0x7f070012;
-        public static final int textViewPlayerName=0x7f07000f;
-        public static final int textViewPlayerRating=0x7f070011;
-        public static final int textViewPlayerSurname=0x7f070010;
-        public static final int textViewRating=0x7f070013;
+        public static final int textView1=0x7f07000b;
+        public static final int textViewPlayerClub=0x7f070011;
+        public static final int textViewPlayerName=0x7f070003;
+        public static final int textViewPlayerRating=0x7f070010;
+        public static final int textViewPlayerSurname=0x7f070005;
+        public static final int textViewRating=0x7f070012;
         public static final int textViewWaitingAccessWebFFG=0x7f070001;
-        public static final int webviewffg=0x7f07000e;
+        public static final int webviewffg=0x7f07000f;
     }
     public static final class layout {
         public static final int activity_ffg_splashscreen=0x7f030000;

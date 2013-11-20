@@ -10,6 +10,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+/**
+ * 
+ * @author simeon
+ *
+ */
 public class AccessFFGButton implements OnClickListener{
 
 	private MainActivity _main_activity;
@@ -20,7 +25,7 @@ public class AccessFFGButton implements OnClickListener{
 	
 	@Override
 	public void onClick(View v) {
-		Log.i("TRACE", "public void onClick(View v)");
+		Log.i("TRACE", "AccessFFGButton *** public void onClick(View v)");
 		
 		//We're gone to access FFG web site via a browser
 		Intent i = new Intent(this._main_activity.getBaseContext(), SplashScreenFFGActivity.class);
