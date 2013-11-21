@@ -1,5 +1,9 @@
 package org.jeudego.listeners;
 
+import org.jeudego.ffg.MainActivity;
+import org.jeudego.ffg.MyProfileActivity;
+
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,11 +15,19 @@ import android.view.View.OnClickListener;
  */
 public class ShowProfileButton implements OnClickListener{
 
+	private MainActivity _main_activity;
+	
+	public ShowProfileButton(MainActivity main_activity){
+		this._main_activity = main_activity;
+	}
+	
 	public void onClick(View v) {
 		Log.i("TRACE", "ShowProfileButton *** public void onClick(View v) ");
 		
-		// TODO Auto-generated method stub
+		//Ask for the profile activity
+		Intent i = new Intent(this._main_activity.getBaseContext(), MyProfileActivity.class );
 		
+		this._main_activity.startActivity(i);
 	}
 
 }
