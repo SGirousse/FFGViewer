@@ -20,7 +20,7 @@
                 android:id="@+id/textViewPlayerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="@string/player_name" />
 
             <EditText
                 android:id="@+id/editTextPlayerName"
@@ -40,7 +40,7 @@
                 android:id="@+id/textViewPlayerSurname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="@string/player_surname" />
 
             <EditText
                 android:id="@+id/editTextPlayerSurname"

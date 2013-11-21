@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * The main activity, offering option to Go on main
@@ -17,6 +18,9 @@ import android.widget.Button;
  *
  */
 public class MainActivity extends Activity {
+	
+	//Version
+	private final String _VERSION = "v0.2.5 - 21.11.2013";
 
 	//Listeners
 	private AccessFFGButton _access_ffg_button;
@@ -28,6 +32,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         Log.i("TRACE", "MainActivity *** public void onCreate(Bundle savedInstanceState) ");
         setContentView(R.layout.activity_main);
+        
+        //Set version
+        TextView textview_version = (TextView) findViewById(R.id.textViewVersion);
+        textview_version.setText(this._VERSION);
                 
         // --- Listeners --- //
         //Web site access
@@ -36,7 +44,7 @@ public class MainActivity extends Activity {
         access_ffg_button.setOnClickListener(this._access_ffg_button);
         
         //Show own profile
-        this._show_profile_button = new ShowProfileButton();
+        this._show_profile_button = new ShowProfileButton(this);
         Button show_profile_button = (Button) findViewById(R.id.buttonShowProfile);
         show_profile_button.setOnClickListener(this._show_profile_button);
         

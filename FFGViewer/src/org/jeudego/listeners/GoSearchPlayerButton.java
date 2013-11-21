@@ -32,25 +32,25 @@ public class GoSearchPlayerButton implements OnClickListener{
 	public void onClick(View v) {
 		Log.i("TRACE", "GoSearchPlayerButton *** public void onClick(View v) ");
 		
-		Player p = null;
+		/*Player p = null;
 		String name = this._name_edit_text.getText().toString();
-		String surname = this._name_edit_text.getText().toString();
+		String surname = this._surname_edit_text.getText().toString();
 		
 		//Clean previous lis
 		this._player_list.clear();
 		
 		//Select new players
-		/*for(int i=0;i<completeListOfPlayers.length();Number;i++){
+		for(int i=0;i<completeListOfPlayers.length();Number;i++){
 			p = completeListOfPlayers.get(i);
 			if((!name.isEmpty() && p.getName().compareTo(name)==0) && (!surname.isEmpty() && p.getSurname().compareTo(surname)==0)){
 				//Add the player
 				this._player_list.add(p);
 			}
-		}*/
+		}
 		
 		//Notify change for interface update
 		this._player_quick_view_adapter.notifyDataSetChanged();
-		
+		*/
 	}
 
 }

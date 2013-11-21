@@ -2,10 +2,8 @@ package org.jeudego.listeners;
 
 import org.jeudego.ffg.MainActivity;
 import org.jeudego.ffg.SplashScreenFFGActivity;
-import org.jeudego.ffg.ViewWebsiteActivity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;

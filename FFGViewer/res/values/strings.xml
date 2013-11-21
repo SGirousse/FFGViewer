@@ -11,6 +11,7 @@
     <string name="text_button_search">Chercher un joueur</string>
     <string name="text_button_access_FFG_website">Fédération française de Go</string>
     <string name="text_button_updating">Réactualiser les informations</string>
+    <string name="text_button_tournament_schedule">Calendrier des tournois</string>
     
     <string name="title_activity_list_player">Sélection d\'un joueur</string>
     
@@ -18,4 +19,8 @@
     <string name="player_surname">Prénom</string>
     
     <string name="wait_access_website_ffg">Chargement des données &#8230;</string>
+    
+    <string name="licenced_to">Licencié à </string>
+    <string name="tournament_list">Participations aux tournois :</string>
+    <string name="responsibilities_list">Responsabilités :</string>
 </resources>

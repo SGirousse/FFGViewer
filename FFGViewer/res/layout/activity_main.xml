@@ -8,25 +8,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/quickContactBadge1"
-        android:layout_marginLeft="32dp"
         android:layout_marginTop="75dp"
         android:text="@string/text_button_access_profile" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textViewHello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/quickContactBadge1"
+        android:layout_alignBottom="@+id/quickContactBadgeUser"
         android:layout_alignLeft="@+id/buttonShowProfile"
         android:layout_alignParentTop="true"
         android:layout_marginTop="39dp"
-        android:layout_toLeftOf="@+id/quickContactBadge1"
+        android:layout_toLeftOf="@+id/quickContactBadgeUser"
         android:text="@string/hello" />
 
     <QuickContactBadge
-        android:id="@+id/quickContactBadge1"
+        android:id="@+id/quickContactBadgeUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -34,33 +33,49 @@
         android:layout_marginRight="19dp" />
 
     <Button
-        android:id="@+id/buttonSearch"
+        android:id="@+id/buttonTournamentSchedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonShowProfile"
-        android:layout_alignRight="@+id/buttonShowProfile"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/buttonShowProfile"
-        android:layout_marginTop="46dp"
-        android:text="@string/text_button_search" />
+        android:text="@string/text_button_tournament_schedule" />
 
     <Button
         android:id="@+id/buttonGoFFG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonSearch"
-        android:layout_alignRight="@+id/buttonSearch"
-        android:layout_below="@+id/buttonSearch"
-        android:layout_marginTop="52dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/buttonTournamentSchedule"
         android:text="@string/text_button_access_FFG_website" />
+
+    <Button
+        android:id="@+id/buttonSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/buttonGoFFG"
+        android:text="@string/text_button_search" />
 
     <Button
         android:id="@+id/buttonUpdating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonGoFFG"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/buttonGoFFG"
-        android:layout_marginBottom="43dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/buttonSearch"
         android:text="@string/text_button_updating" />
+
+    <TextView
+        android:id="@+id/textViewVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>
