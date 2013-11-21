@@ -27,7 +27,7 @@ public class SplashScreenFFGActivity extends Activity {
 
             public void run() {
                 // This method will be executed once the timer is over
-                Intent i = new Intent(SplashScreenFFGActivity.this, ViewWebsiteActivity.class);
+                Intent i = new Intent(SplashScreenFFGActivity.this, ViewNewsActivity.class);
                 startActivity(i);
  
                 // close this activity

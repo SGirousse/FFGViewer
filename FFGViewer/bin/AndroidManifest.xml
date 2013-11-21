@@ -34,7 +34,7 @@
         </activity>
         
        <activity
-            android:name=".ViewWebsiteActivity"
+            android:name=".ViewNewsActivity"
             android:label="@string/title_activity_main" 
             android:theme="@android:style/Theme.DeviceDefault.NoActionBar" >
         </activity>

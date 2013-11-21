@@ -3,73 +3,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
+    <TextView
+        android:id="@+id/textViewPlayerName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextPlayerName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="20dp"
-        android:orientation="vertical" >
+        android:layout_toLeftOf="@+id/editTextPlayerName"
+        android:text="@string/player_name" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/textViewPlayerName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/player_name" />
-
-            <EditText
-                android:id="@+id/editTextPlayerName"
-                android:layout_width="139dp"
-                android:layout_height="wrap_content" >
-
-                <requestFocus />
-            </EditText>
-
-        </LinearLayout>
-        
-            <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/textViewPlayerSurname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/player_surname" />
-
-            <EditText
-                android:id="@+id/editTextPlayerSurname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-
-                <requestFocus />
-            </EditText>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/buttonGoSearchPlayer"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editTextPlayerName"
+        android:layout_width="139dp"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/linearLayout1"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/linearLayout1"
-        android:text="Button" />
+        android:layout_alignLeft="@+id/editTextPlayerSurname"
+        android:layout_toLeftOf="@+id/buttonGoSearchPlayer" >
+
+        <requestFocus />
+    </EditText>
 
     <ListView
         android:id="@+id/listViewPlayers"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/linearLayout1"
-        android:layout_below="@+id/linearLayout1"
-        android:layout_marginTop="26dp" >
+        android:layout_below="@+id/editTextPlayerSurname" >
     </ListView>
+
+    <Button
+        android:id="@+id/buttonGoSearchPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextPlayerSurname"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/editTextPlayerName"
+        android:text="Button" />
+
+    <EditText
+        android:id="@+id/editTextPlayerSurname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPlayerName"
+        android:layout_toLeftOf="@+id/buttonGoSearchPlayer"
+        android:layout_toRightOf="@+id/textViewPlayerSurname"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textViewPlayerSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextPlayerSurname"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/editTextPlayerSurname"
+        android:text="@string/player_surname" />
 
 </RelativeLayout>

@@ -3,6 +3,8 @@ package org.jeudego.ffg;
 import org.jeudego.listeners.AccessFFGButton;
 import org.jeudego.listeners.SearchPlayerButton;
 import org.jeudego.listeners.ShowProfileButton;
+import org.jeudego.listeners.UpdatingButton;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -26,6 +28,7 @@ public class MainActivity extends Activity {
 	private AccessFFGButton _access_ffg_button;
 	private ShowProfileButton _show_profile_button;
 	private SearchPlayerButton _search_player_button;
+	private UpdatingButton _updating_button;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,12 @@ public class MainActivity extends Activity {
         this._search_player_button = new SearchPlayerButton(this);
         Button search_player_button = (Button) findViewById(R.id.buttonSearch);
         search_player_button.setOnClickListener(this._search_player_button);
+        
+        //Update DB
+        Button update_button = (Button) findViewById(R.id.buttonUpdating);
+        TextView textview_last_update_date = (TextView) findViewById(R.id.textViewLastMAJDate);
+        this._updating_button = new UpdatingButton(this, update_button, textview_last_update_date);
+        update_button.setOnClickListener(this._updating_button);
         
     }
 

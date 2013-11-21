@@ -41,7 +41,7 @@ public class PlayerListActivity extends Activity {
         
         // --- Adapters --- //
         //Each player to show
-        this._player_quick_view_adapter = new PlayerQuickViewAdapter(this, R.layout.player_in_list, this._list_of_players);
+        this._player_quick_view_adapter = new PlayerQuickViewAdapter(this, R.layout.item_player, this._list_of_players);
         //Add it to listView
         ListView lv = (ListView) findViewById(R.id.listViewPlayers);
         lv.setAdapter(this._player_quick_view_adapter);
