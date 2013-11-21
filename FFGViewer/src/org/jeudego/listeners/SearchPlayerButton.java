@@ -23,7 +23,6 @@ public class SearchPlayerButton implements OnClickListener{
 		this._main_activity = main_activity;
 	}
 
-	@Override
 	public void onClick(View v) {
 		Log.i("TRACE", "SearchPlayerButton *** public void onClick(View v) ");
 		

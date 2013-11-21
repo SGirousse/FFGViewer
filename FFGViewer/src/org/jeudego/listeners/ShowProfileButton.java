@@ -11,7 +11,6 @@ import android.view.View.OnClickListener;
  */
 public class ShowProfileButton implements OnClickListener{
 
-	@Override
 	public void onClick(View v) {
 		Log.i("TRACE", "ShowProfileButton *** public void onClick(View v) ");
 		

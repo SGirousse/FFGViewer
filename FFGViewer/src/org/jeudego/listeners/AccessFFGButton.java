@@ -23,7 +23,6 @@ public class AccessFFGButton implements OnClickListener{
 		this._main_activity = main_activity;
 	}
 	
-	@Override
 	public void onClick(View v) {
 		Log.i("TRACE", "AccessFFGButton *** public void onClick(View v)");
 		

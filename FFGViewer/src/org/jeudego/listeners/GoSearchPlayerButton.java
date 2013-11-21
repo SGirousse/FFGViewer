@@ -29,7 +29,6 @@ public class GoSearchPlayerButton implements OnClickListener{
 		this._player_quick_view_adapter = player_quick_view_adapter;
 	}
 	
-	@Override
 	public void onClick(View v) {
 		Log.i("TRACE", "GoSearchPlayerButton *** public void onClick(View v) ");
 		
