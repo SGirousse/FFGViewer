@@ -22,7 +22,7 @@ public class Player {
 		this._surname = surname;
 	}
 	
-	public Player(String id, String name, String surname, String no_licence, Integer rating, String club, String country){
+	public Player(String id, String name, String surname, String no_licence, int rating, String club, String country){
 		this._id = id;
 		this._name = name;
 		this._surname = surname;
@@ -33,30 +33,30 @@ public class Player {
 	}
 	
 	public String getName(){
-		return this._name;
+		return _name;
 	}
 	
 	public String getSurname(){
-		return this._surname;
+		return _surname;
 	}
 	
 	public String getId(){
-		return this._id;
+		return _id;
 	}
 	
 	public String getNoLicence(){
-		return this._no_licence;
+		return _no_licence;
 	}
 	
 	public int getRating(){
-		return this._rating;
+		return _rating;
 	}
 	
 	public String getClub(){
-		return this._club;
+		return _club;
 	}
 	
 	public String getCountry(){
-		return this._country;
+		return _country;
 	}
 }

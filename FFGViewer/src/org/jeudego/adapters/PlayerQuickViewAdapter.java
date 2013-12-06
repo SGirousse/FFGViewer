@@ -37,16 +37,18 @@ public class PlayerQuickViewAdapter extends ArrayAdapter<Player>{
 		
 	    //Player to update
 		Player p = this._player_list.get(position);
-		
-		TextView text_view_name = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewPlayerName);
+
+		TextView text_view_name = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewPlayerName);		
 		text_view_name.setText(p.getName());
 		TextView text_view_surname = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewPlayerSurname);
 		text_view_surname.setText(p.getSurname());
+		plantage avant le two
 		TextView text_view_rating = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewPlayerRating);
 		text_view_rating.setText(p.getRating());
+		Log.i("TRACE", "PlayerQuickViewAdapter *** TWO");
 		TextView text_view_club = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewPlayerClub);
 		text_view_club.setText(p.getClub());
-		
+		Log.i("TRACE", "PlayerQuickViewAdapter *** THREE");
 		return convertView;
 	}
 }

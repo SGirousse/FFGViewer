@@ -37,22 +37,28 @@ public class PlayerListActivity extends Activity {
         setContentView(R.layout.activity_list_player);
         
         //Player list initialization
-        this._list_of_players = new ArrayList<Player>();
+        _list_of_players = new ArrayList<Player>();
+        
+        /** TODO deleting this when conn with db will be implemented */
+        _list_of_players.add(new Player("1","CLAIR", "Yves", "9951702", -411, "64Pa", "FR"));
+        _list_of_players.add(new Player("2","BRAGA", "Nelly", "1300043", -2012, "64Pa", "FR"));
+        _list_of_players.add(new Player("3","GIROUSSE", "Siméon", "1100109", -46, "64Pa", "FR"));
+        _list_of_players.add(new Player("4","MAILLOT", "Geoffrey", "1300161", -1210, "64Ta", "FR"));
         
         // --- Adapters --- //
         //Each player to show
-        this._player_quick_view_adapter = new PlayerQuickViewAdapter(this, R.layout.item_player, this._list_of_players);
+        _player_quick_view_adapter = new PlayerQuickViewAdapter(this, R.layout.item_player, _list_of_players);
         //Add it to listView
         ListView lv = (ListView) findViewById(R.id.listViewPlayers);
-        lv.setAdapter(this._player_quick_view_adapter);
+        lv.setAdapter(_player_quick_view_adapter);
         
         // --- Listeners --- //
         //Search player
         EditText name_edit_text = (EditText) findViewById(R.id.editTextPlayerName);
         EditText surname_edit_text = (EditText) findViewById(R.id.editTextPlayerSurname);
-        this._go_search_player_button = new GoSearchPlayerButton(name_edit_text, surname_edit_text, this._list_of_players, this._player_quick_view_adapter);
+        _go_search_player_button = new GoSearchPlayerButton(name_edit_text, surname_edit_text, _list_of_players, _player_quick_view_adapter);
         Button go_search_player_button = (Button) findViewById(R.id.buttonGoSearchPlayer);
-        go_search_player_button.setOnClickListener(this._go_search_player_button);
+        go_search_player_button.setOnClickListener(_go_search_player_button);
      
     }
 
