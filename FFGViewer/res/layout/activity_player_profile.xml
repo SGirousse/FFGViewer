@@ -1,0 +1,110 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textViewNameSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="22dp"
+        android:text="name_surname"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <QuickContactBadge
+        android:id="@+id/quickContactBadgePlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="24dp" />
+
+    <TextView
+        android:id="@+id/textViewRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewNameSurname"
+        android:layout_alignBottom="@+id/textViewNameSurname"
+        android:layout_centerHorizontal="true"
+        android:text="rating"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textViewLicencedTo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/quickContactBadgePlayer"
+        android:layout_alignLeft="@+id/textViewNameSurname"
+        android:text="@string/licenced_to" />
+
+    <TextView
+        android:id="@+id/textViewClub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewLicencedTo"
+        android:layout_alignBottom="@+id/textViewLicencedTo"
+        android:layout_toRightOf="@+id/textViewLicencedTo"
+        android:text="club_name" />
+
+    <TextView
+        android:id="@+id/textViewNoLicence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/quickContactBadgePlayer"
+        android:layout_below="@+id/quickContactBadgePlayer"
+        android:text="no_licence"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <ListView
+        android:id="@+id/listViewTournaments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonAccessTournamentSchedule"
+        android:layout_alignLeft="@+id/textViewTournamentList"
+        android:layout_alignRight="@+id/textViewRating"
+        android:layout_alignTop="@+id/listViewResponsabilities" >
+
+    </ListView>
+
+    <ListView
+        android:id="@+id/listViewResponsabilities"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewResponsability"
+        android:layout_below="@+id/textViewResponsability" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/buttonAccessTournamentSchedule"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/listViewTournaments"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/listViewTournaments"
+        android:minHeight="24dip"
+        android:text="Button" />
+
+    <TextView
+        android:id="@+id/textViewTournamentList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textViewLicencedTo"
+        android:layout_below="@+id/textViewNoLicence"
+        android:text="@string/tournament_list" />
+
+    <TextView
+        android:id="@+id/textViewResponsability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textViewTournamentList"
+        android:layout_alignBottom="@+id/textViewTournamentList"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/listViewTournaments"
+        android:text="@string/responsibilities_list" />
+
+</RelativeLayout>
