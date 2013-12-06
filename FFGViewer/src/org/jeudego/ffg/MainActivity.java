@@ -22,7 +22,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 	
 	//Version
-	private final String _VERSION = "v0.2.5 - 21.11.2013";
+	private final String _VERSION = "v0.2.6 - 06.12.2013";
 
 	//Listeners
 	private AccessFFGButton _access_ffg_button;
