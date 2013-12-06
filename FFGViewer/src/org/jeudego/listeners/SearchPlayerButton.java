@@ -24,9 +24,9 @@ public class SearchPlayerButton implements OnClickListener{
 	public void onClick(View v) {
 		Log.i("TRACE", "SearchPlayerButton *** public void onClick(View v) ");
 		
-		Intent i = new Intent(this._main_activity.getBaseContext(), PlayerListActivity.class);
+		Intent i = new Intent(_main_activity.getBaseContext(), PlayerListActivity.class);
 		
-		this._main_activity.startActivity(i);
+		_main_activity.startActivity(i);
 	}
 
 }

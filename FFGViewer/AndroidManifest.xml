@@ -44,6 +44,10 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
+        
+        <service
+            android:name=".MAJLocalDatabase"
+            android:exported="false"/>
     </application>
 
 </manifest>

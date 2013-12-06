@@ -4,7 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.jeudego.ffg.MainActivity;
+import org.jeudego.services.MAJLocalDatabaseService;
+import org.jeudego.utils.MAJQuery;
+import org.jeudego.utils.QueryTranslation;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -27,12 +31,12 @@ public class UpdatingButton implements OnClickListener{
 	public void onClick(View v) {
 		Log.i("TRACE", "UpdatingButton *** public void onClick(View v) ");
 		//While it's downloading, avoid multiple click
-		this._update_button.setEnabled(false);
+		_update_button.setEnabled(false);
 		
 		// TODO Service in background updating database
-				
+		
 		//Re-enabled at the end
-		//this._update_button.setEnabled(true);
+		this._update_button.setEnabled(true);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		this._last_maj.setText(dateFormat.format(new Date()));
 		
