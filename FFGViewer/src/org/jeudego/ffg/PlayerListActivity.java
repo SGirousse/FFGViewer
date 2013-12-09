@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.jeudego.adapters.PlayerQuickViewAdapter;
+import org.jeudego.database.PlayerDataSource;
 import org.jeudego.listeners.GoSearchPlayerButton;
 import org.jeudego.pojo.Player;
 
@@ -28,6 +29,7 @@ public class PlayerListActivity extends Activity {
 	//Adapters
 	private PlayerQuickViewAdapter _player_quick_view_adapter;
 	//Player list
+	private PlayerDataSource _player_dao;
 	private List<Player> _list_of_players;
 	
     @Override
@@ -37,14 +39,17 @@ public class PlayerListActivity extends Activity {
         setContentView(R.layout.activity_list_player);
         
         //Player list initialization
+        _player_dao = new PlayerDataSource(this);
+        _player_dao.open(false);
+        
+        _player_dao.insertPlayer(new Player(1,"CLAIR", "Yves", "9951702", -411, "64Pa"));
+        _player_dao.insertPlayer(new Player(2,"BRAGA", "Nelly", "1300043", -2012, "64Pa"));
+        _player_dao.insertPlayer(new Player(3,"GIROUSSE", "Siméon", "1100109", -46, "64Pa"));
+        _player_dao.insertPlayer(new Player(4,"MAILLOT", "Geoffrey", "1300161", -1210, "64Ta"));
+        
         _list_of_players = new ArrayList<Player>();
-        
-        /** TODO deleting this when conn with db will be implemented */
-        _list_of_players.add(new Player("1","CLAIR", "Yves", "9951702", -411, "64Pa", "FR"));
-        _list_of_players.add(new Player("2","BRAGA", "Nelly", "1300043", -2012, "64Pa", "FR"));
-        _list_of_players.add(new Player("3","GIROUSSE", "Siméon", "1100109", -46, "64Pa", "FR"));
-        _list_of_players.add(new Player("4","MAILLOT", "Geoffrey", "1300161", -1210, "64Ta", "FR"));
-        
+        _list_of_players = _player_dao.getAllPlayers();
+
         // --- Adapters --- //
         //Each player to show
         _player_quick_view_adapter = new PlayerQuickViewAdapter(this, R.layout.item_player, _list_of_players);

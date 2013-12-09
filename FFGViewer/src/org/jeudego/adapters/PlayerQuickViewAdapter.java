@@ -42,7 +42,7 @@ public class PlayerQuickViewAdapter extends ArrayAdapter<Player>{
 		text_view_name.setText(p.getName());
 		TextView text_view_surname = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewPlayerSurname);
 		text_view_surname.setText(p.getSurname());
-		plantage avant le two
+		Log.i("TRACE", "PlayerQuickViewAdapter *** PLANTAGE JUSTE APRES");
 		TextView text_view_rating = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewPlayerRating);
 		text_view_rating.setText(p.getRating());
 		Log.i("TRACE", "PlayerQuickViewAdapter *** TWO");

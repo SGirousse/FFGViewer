@@ -8,28 +8,47 @@ package org.jeudego.pojo;
  *
  */
 public class Player {
+	private int _id;
 	private String _name;
 	private String _surname;
-	private String _id;
 	private String _no_licence;
 	private int _rating;
 	private String _club;
-	private String _country;
 	
-	public Player(String id, String name, String surname){
-		this._id = id;
-		this._name = name;
-		this._surname = surname;
+	public Player(){
 	}
 	
-	public Player(String id, String name, String surname, String no_licence, int rating, String club, String country){
+	public Player(int id, String name, String surname, String no_licence, int rating, String club){
 		this._id = id;
 		this._name = name;
 		this._surname = surname;
 		this._no_licence = no_licence;
 		this._rating = rating;
 		this._club = club;
-		this._country = country;
+	}
+	
+	public void setName(String name){
+		this._name=name;
+	}
+	
+	public void setSurname(String surname){
+		this._surname=surname;
+	}
+	
+	public void setId(int id){
+		this._id=id;
+	}
+	
+	public void setNoLicence(String no_licence){
+		this._no_licence=no_licence;
+	}
+	
+	public void setRating(int rating){
+		this._rating=rating;
+	}
+	
+	public void setClub(String club){
+		this._club=club;
 	}
 	
 	public String getName(){
@@ -40,7 +59,7 @@ public class Player {
 		return _surname;
 	}
 	
-	public String getId(){
+	public int getId(){
 		return _id;
 	}
 	
@@ -55,8 +74,8 @@ public class Player {
 	public String getClub(){
 		return _club;
 	}
-	
-	public String getCountry(){
-		return _country;
+
+	public String toString(){
+		return "ID : "+_id+" \nNom : "+_name+" \nPrenom : "+_surname+"No licence : "+_no_licence+" \nRating : "+_rating+" \nClub: "+_club;
 	}
 }
