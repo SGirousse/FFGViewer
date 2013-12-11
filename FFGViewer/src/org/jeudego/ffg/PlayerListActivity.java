@@ -6,6 +6,7 @@ import java.util.List;
 import org.jeudego.adapters.PlayerQuickViewAdapter;
 import org.jeudego.database.PlayerDataSource;
 import org.jeudego.listeners.GoSearchPlayerButton;
+import org.jeudego.listeners.PlayerItem;
 import org.jeudego.pojo.Player;
 
 import android.app.Activity;
@@ -60,9 +61,11 @@ public class PlayerListActivity extends Activity {
         //Search player
         EditText name_edit_text = (EditText) findViewById(R.id.editTextPlayerName);
         EditText surname_edit_text = (EditText) findViewById(R.id.editTextPlayerSurname);
-        _go_search_player_button = new GoSearchPlayerButton(name_edit_text, surname_edit_text, _list_of_players, _player_quick_view_adapter);
+        _go_search_player_button = new GoSearchPlayerButton(this, name_edit_text, surname_edit_text, _list_of_players, _player_quick_view_adapter);
         Button go_search_player_button = (Button) findViewById(R.id.buttonGoSearchPlayer);
         go_search_player_button.setOnClickListener(_go_search_player_button);
+        //Item clicked
+        lv.setOnItemClickListener(new PlayerItem(this, _list_of_players));
      
     }
 

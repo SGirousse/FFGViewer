@@ -31,9 +31,15 @@ public class PlayerDataSource {
 		_players_db.close();
 	}
 	
+	/**
+	 * Insert a new player into the database corresponding to the given Player object.
+	 * 
+	 * @param p
+	 * @return int
+	 * @see Player
+	 */
 	public long insertPlayer(Player p){
 		Log.i("TRACE_DB", "PlayerDataSource *** public long insertPlayer(Player p)");
-		Log.i("TRACE_DB", "PlayerDataSource *** public long insertPlayer(Player p) : joueur insere = "+p.getName());
 		
 		ContentValues values = new ContentValues();
 		
@@ -48,7 +54,16 @@ public class PlayerDataSource {
 		return _players_db.insert(_players_db_helper.TABLE_PLAYER, null, values);
 	}
 	
+	/**
+	 * Update a player (all the values are updated) according to the given id and the player object.
+	 * 
+	 * @param id
+	 * @param p
+	 * @return int
+	 * @see Player
+	 */
 	public int updatePlayer(int id, Player p){
+		Log.i("TRACE_DB", "PlayerDataSource *** public int updatePlayer(int id, Player p)");
 		ContentValues values = new ContentValues();
 		
 		values.put(_players_db_helper.COL_PLAYER_ID, p.getId());
@@ -61,51 +76,75 @@ public class PlayerDataSource {
 		return _players_db.update(_players_db_helper.TABLE_PLAYER, values, _players_db_helper.COL_PLAYER_ID + " = " +id, null);
 	}
 	
+	/**
+	 * Delete a particular player according to the given id.
+	 * 
+	 * @param id
+	 * @return int
+	 */
 	public int deletePlayerWithId(int id){
+		Log.i("TRACE_DB", "PlayerDataSource *** public int deletePlayerWithId(int id)");
+		
 		return _players_db.delete(_players_db_helper.TABLE_PLAYER, _players_db_helper.COL_PLAYER_ID + " = " +id, null);
 	}
 	
+	/**
+	 * Delete all the players in database in order to clean it.
+	 * 
+	 * @return int
+	 */
 	public int deleteAllPlayers(){
+		Log.i("TRACE_DB", "PlayerDataSource *** public int deleteAllPlayers()");
+		
 		return _players_db.delete(_players_db_helper.TABLE_PLAYER, null, null);
 	}
 	
+	/**
+	 * Get the whole list of players registered in the database.
+	 * 
+	 * @return List<Player>
+	 */
 	public List<Player> getAllPlayers(){
+		Log.i("TRACE_DB", "PlayerDataSource *** public List<Player> getAllPlayers()");
+		
 	    List<Player> p_list = new ArrayList<Player>();
 
-	    //Cursor cursor = _players_db.query(_players_db_helper.TABLE_PLAYER,
-	    //    null, null, null, null, null, null);
-	    //Cursor cursor = _players_db.rawQuery("SELECT * FROM "+_players_db_helper.TABLE_PLAYER, null);
-	    Cursor cursor = null;
+	    Cursor cursor = _players_db.query(_players_db_helper.TABLE_PLAYER,
+	        null, null, null, null, null, null);
 	    
-	    for (long x=1; x<8; x++){
-	    	cursor = _players_db.query(_players_db_helper.TABLE_PLAYER,
-		        null, _players_db_helper.COL_PLAYER_ID + " = " + x, null, null, null, null);
-	    	cursor.moveToFirst();
-    		Player p = cursorToPlayer(cursor);
-	    	p_list.add(p);
-	    	Log.i("TRACE_DB", "PlayerDataSource *** getAllPlayers : joueur recupere = "+p.getName());
-	    	
-	    }
-	    
-	   /* if(cursor.moveToFirst()){
+	   if(cursor.moveToFirst()){
 	    	do{
 	    		Player p = cursorToPlayer(cursor);
 		    	p_list.add(p);
-		    	Log.i("TRACE_DB", "PlayerDataSource *** getAllPlayers : joueur recupere = "+p.getName());
-		    	
-		    	cursor.moveToNext();
 		    }while(cursor.moveToNext());
-	    }*/
+	    }
 	    
 	    //close the cursor
 	    cursor.close();
 	    
-	    Log.i("TRACE", "Nombre de joueurs = "+p_list.size());
-	    
 	    return p_list;
 	}
 	
+	public Player getPlayerByNoLicence(String no_licence){
+		Cursor c = _players_db.query(_players_db_helper.TABLE_PLAYER,
+		        null, _players_db_helper.COL_PLAYER_NOLICENCE +" = ? ", new String[]{no_licence}, null, null, null);
+		
+		if(c.moveToFirst()){
+			return cursorToPlayer(c);
+		}else{
+			return null;
+		}
+	}
+	
+	/**
+	 * It changes a cursor concerning a player to an Object Player.
+	 * 
+	 * @param c
+	 * @return Player
+	 * @see Player
+	 */
 	public Player cursorToPlayer(Cursor c){
+		Log.i("TRACE_DB", "PlayerDataSource *** public Player cursorToPlayer(Cursor c)");
 		Player p = new Player();
 		
 		p.setId(c.getInt(0));

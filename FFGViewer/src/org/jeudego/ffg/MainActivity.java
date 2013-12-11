@@ -7,8 +7,11 @@ import org.jeudego.listeners.UpdatingButton;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -39,7 +42,13 @@ public class MainActivity extends Activity {
         //Set version
         TextView textview_version = (TextView) findViewById(R.id.textViewVersion);
         textview_version.setText(this._VERSION);
-                
+        SharedPreferences pref = getSharedPreferences("IDENT_USER_FILE", Context.MODE_WORLD_WRITEABLE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("User_surname", "Siméon");
+        editor.putString("User_name", "Girousse");
+        editor.putString("User_licence", "1100109");
+        editor.commit();
+        
         // --- Listeners --- //
         //Web site access
         this._access_ffg_button = new AccessFFGButton(this);
@@ -68,5 +77,19 @@ public class MainActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
+    }
+    
+    public boolean onOptionsItemSelected(MenuItem item) 
+    {
+       //On regarde l'ID et on déclenche l'action
+       switch (item.getItemId()) 
+       {
+          case R.id.menu_settings:
+                  //Lance la nouvelle activité
+                  //Intent intent = new Intent(MainActivity.this, About.class);
+                        //startActivity(intent);
+             return true;
+       }
+       return true;
     }
 }

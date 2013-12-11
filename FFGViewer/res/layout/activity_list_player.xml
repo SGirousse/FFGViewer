@@ -37,7 +37,7 @@
         android:layout_alignBottom="@+id/editTextPlayerSurname"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@id/editTextPlayerName"
-        android:text="Button" />
+        android:text="@string/title_activity_list_player" />
 
     <EditText
         android:id="@+id/editTextPlayerSurname"

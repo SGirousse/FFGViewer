@@ -16,7 +16,6 @@ public final class R {
         public static final int lg_ffg=0x7f020002;
     }
     public static final class id {
-        public static final int buttonAccessTournamentSchedule=0x7f070019;
         public static final int buttonGoFFG=0x7f07000c;
         public static final int buttonGoSearchPlayer=0x7f070005;
         public static final int buttonSearch=0x7f07000d;
@@ -27,28 +26,25 @@ public final class R {
         public static final int editTextPlayerSurname=0x7f070004;
         public static final int imageViewLogoFFG=0x7f070000;
         public static final int listViewPlayers=0x7f070006;
-        public static final int listViewResponsabilities=0x7f07001b;
-        public static final int listViewTournaments=0x7f070018;
-        public static final int menu_settings=0x7f070020;
-        public static final int quickContactBadgePlayer=0x7f070013;
+        public static final int menu_settings=0x7f07001c;
         public static final int quickContactBadgeUser=0x7f07000a;
-        public static final int textViewClub=0x7f070016;
+        public static final int textViewClub=0x7f070015;
         public static final int textViewHello=0x7f070009;
         public static final int textViewLastMAJ=0x7f070010;
         public static final int textViewLastMAJDate=0x7f070011;
-        public static final int textViewLicencedTo=0x7f070015;
+        public static final int textViewLicencedTo=0x7f070014;
         public static final int textViewNameSurname=0x7f070012;
-        public static final int textViewNoLicence=0x7f070017;
-        public static final int textViewPlayerClub=0x7f07001f;
+        public static final int textViewNoLicence=0x7f070016;
+        public static final int textViewPlayerClub=0x7f07001a;
         public static final int textViewPlayerName=0x7f070002;
-        public static final int textViewPlayerRating=0x7f07001e;
+        public static final int textViewPlayerRating=0x7f07001b;
         public static final int textViewPlayerSurname=0x7f070007;
-        public static final int textViewRating=0x7f070014;
-        public static final int textViewResponsability=0x7f07001c;
-        public static final int textViewTournamentList=0x7f07001a;
+        public static final int textViewRating=0x7f070013;
+        public static final int textViewResponsability=0x7f070018;
+        public static final int textViewTournamentList=0x7f070017;
         public static final int textViewVersion=0x7f07000f;
         public static final int textViewWaitingAccessWebFFG=0x7f070001;
-        public static final int webviewffg=0x7f07001d;
+        public static final int webviewffg=0x7f070019;
     }
     public static final class layout {
         public static final int activity_ffg_splashscreen=0x7f030000;
