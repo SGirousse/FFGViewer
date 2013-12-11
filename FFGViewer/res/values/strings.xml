@@ -30,4 +30,7 @@
     <string name="licenced_to">Licencié à </string>
     <string name="tournament_list">Participations aux tournois :</string>
     <string name="responsibilities_list">Responsabilités :</string>
+    
+    <!-- Parameters Activity -->
+    <string name="title_parameters_activity">Réglages </string>
 </resources>

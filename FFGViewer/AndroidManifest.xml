@@ -45,6 +45,11 @@
             android:theme="@android:style/Theme.Light.NoTitleBar" >
         </activity>
         
+        <activity
+            android:name=".ParametersActivity"
+            android:label="@string/title_parameters_activity" >
+        </activity>
+        
         <service
             android:name=".MAJLocalDatabase"
             android:exported="false"/>
