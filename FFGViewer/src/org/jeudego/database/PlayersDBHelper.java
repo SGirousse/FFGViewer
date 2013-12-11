@@ -39,7 +39,7 @@ public class PlayersDBHelper extends SQLiteOpenHelper{
 		    + COL_PLAYER_SURNAME + " text not null, "
 		    + COL_PLAYER_NOLICENCE + " text not null, "
 		    + COL_PLAYER_CLUB + " text not null, "
-		    + COL_PLAYER_RATING + " integer not null "
+		    + COL_PLAYER_RATING + " text not null "
 		    +")";
 	
 			/*"create table "
@@ -71,7 +71,7 @@ public class PlayersDBHelper extends SQLiteOpenHelper{
 	}
 	
 	public String[] getAllPlayersColumns(){
-		String[] allPlayerColumns = {COL_PLAYER_ID, COL_PLAYER_NAME, COL_PLAYER_SURNAME, COL_PLAYER_NOLICENCE, COL_PLAYER_RATING, COL_PLAYER_CLUB}; 
+		String[] allPlayerColumns = new String[]{COL_PLAYER_ID, COL_PLAYER_NAME, COL_PLAYER_SURNAME, COL_PLAYER_NOLICENCE, COL_PLAYER_RATING, COL_PLAYER_CLUB}; 
 		return allPlayerColumns;
 	}
 }

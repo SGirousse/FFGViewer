@@ -42,13 +42,12 @@ public class PlayerListActivity extends Activity {
         _player_dao = new PlayerDataSource(this);
         _player_dao.open(false);
         
-        _player_dao.insertPlayer(new Player(1,"CLAIR", "Yves", "9951702", -411, "64Pa"));
-        _player_dao.insertPlayer(new Player(2,"BRAGA", "Nelly", "1300043", -2012, "64Pa"));
-        _player_dao.insertPlayer(new Player(3,"GIROUSSE", "Siméon", "1100109", -46, "64Pa"));
-        _player_dao.insertPlayer(new Player(4,"MAILLOT", "Geoffrey", "1300161", -1210, "64Ta"));
-        
         _list_of_players = new ArrayList<Player>();
         _list_of_players = _player_dao.getAllPlayers();
+        
+        Log.i("TRACE", "Nombre de joueurs : "+_list_of_players.size());
+        
+        _player_dao.close();
 
         // --- Adapters --- //
         //Each player to show

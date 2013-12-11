@@ -12,13 +12,13 @@ public class Player {
 	private String _name;
 	private String _surname;
 	private String _no_licence;
-	private int _rating;
+	private String _rating;
 	private String _club;
 	
 	public Player(){
 	}
 	
-	public Player(int id, String name, String surname, String no_licence, int rating, String club){
+	public Player(int id, String name, String surname, String no_licence, String rating, String club){
 		this._id = id;
 		this._name = name;
 		this._surname = surname;
@@ -43,7 +43,7 @@ public class Player {
 		this._no_licence=no_licence;
 	}
 	
-	public void setRating(int rating){
+	public void setRating(String rating){
 		this._rating=rating;
 	}
 	
@@ -67,7 +67,7 @@ public class Player {
 		return _no_licence;
 	}
 	
-	public int getRating(){
+	public String getRating(){
 		return _rating;
 	}
 	

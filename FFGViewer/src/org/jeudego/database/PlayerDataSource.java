@@ -9,6 +9,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class PlayerDataSource {
 	private SQLiteDatabase _players_db;
@@ -31,6 +32,9 @@ public class PlayerDataSource {
 	}
 	
 	public long insertPlayer(Player p){
+		Log.i("TRACE_DB", "PlayerDataSource *** public long insertPlayer(Player p)");
+		Log.i("TRACE_DB", "PlayerDataSource *** public long insertPlayer(Player p) : joueur insere = "+p.getName());
+		
 		ContentValues values = new ContentValues();
 		
 		values.put(_players_db_helper.COL_PLAYER_ID, p.getId());
@@ -40,6 +44,7 @@ public class PlayerDataSource {
 		values.put(_players_db_helper.COL_PLAYER_RATING, p.getRating());
 		values.put(_players_db_helper.COL_PLAYER_NOLICENCE, p.getNoLicence());
 		
+		//Return the affected _id (useful if autoincrement)
 		return _players_db.insert(_players_db_helper.TABLE_PLAYER, null, values);
 	}
 	
@@ -60,33 +65,57 @@ public class PlayerDataSource {
 		return _players_db.delete(_players_db_helper.TABLE_PLAYER, _players_db_helper.COL_PLAYER_ID + " = " +id, null);
 	}
 	
+	public int deleteAllPlayers(){
+		return _players_db.delete(_players_db_helper.TABLE_PLAYER, null, null);
+	}
+	
 	public List<Player> getAllPlayers(){
 	    List<Player> p_list = new ArrayList<Player>();
 
-	    Cursor cursor = _players_db.query(_players_db_helper.TABLE_PLAYER,
-	        _players_db_helper.getAllPlayersColumns(), null, null, null, null, null);
-
-	    if(cursor.moveToFirst()){
-		    do{
-		      Player p = cursorToPlayer(cursor);
-		      p_list.add(p);
-		      cursor.moveToNext();
-		    }while(cursor.moveToNext());
+	    //Cursor cursor = _players_db.query(_players_db_helper.TABLE_PLAYER,
+	    //    null, null, null, null, null, null);
+	    //Cursor cursor = _players_db.rawQuery("SELECT * FROM "+_players_db_helper.TABLE_PLAYER, null);
+	    Cursor cursor = null;
+	    
+	    for (long x=1; x<8; x++){
+	    	cursor = _players_db.query(_players_db_helper.TABLE_PLAYER,
+		        null, _players_db_helper.COL_PLAYER_ID + " = " + x, null, null, null, null);
+	    	cursor.moveToFirst();
+    		Player p = cursorToPlayer(cursor);
+	    	p_list.add(p);
+	    	Log.i("TRACE_DB", "PlayerDataSource *** getAllPlayers : joueur recupere = "+p.getName());
+	    	
 	    }
-	    // make sure to close the cursor
+	    
+	   /* if(cursor.moveToFirst()){
+	    	do{
+	    		Player p = cursorToPlayer(cursor);
+		    	p_list.add(p);
+		    	Log.i("TRACE_DB", "PlayerDataSource *** getAllPlayers : joueur recupere = "+p.getName());
+		    	
+		    	cursor.moveToNext();
+		    }while(cursor.moveToNext());
+	    }*/
+	    
+	    //close the cursor
 	    cursor.close();
+	    
+	    Log.i("TRACE", "Nombre de joueurs = "+p_list.size());
+	    
 	    return p_list;
 	}
 	
 	public Player cursorToPlayer(Cursor c){
 		Player p = new Player();
+		
 		p.setId(c.getInt(0));
 		p.setName(c.getString(1));
 		p.setSurname(c.getString(2));
 		p.setNoLicence(c.getString(3));
 		p.setClub(c.getString(4));
-		p.setRating(c.getInt(5));
+		p.setRating(c.getString(5));
 		
+		Log.i("TRACE", "CursorToPlayer "+p.getName());
 		return p;
 	}
 }
