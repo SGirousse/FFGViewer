@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textViewPlayerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextPlayerName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/editTextPlayerName"
+        android:text="@string/player_name" />
+
+    <EditText
+        android:id="@+id/editTextPlayerName"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextPlayerSurname"
+        android:layout_toLeftOf="@+id/buttonGoSearchPlayer" >
+
+        <requestFocus />
+    </EditText>
+
+    <ListView
+        android:id="@+id/listViewPlayers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPlayerSurname" >
+    </ListView>
+
+    <Button
+        android:id="@+id/buttonGoSearchPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextPlayerSurname"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/editTextPlayerName"
+        android:text="@string/title_activity_list_player" />
+
+    <EditText
+        android:id="@+id/editTextPlayerSurname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPlayerName"
+        android:layout_toLeftOf="@+id/buttonGoSearchPlayer"
+        android:layout_toRightOf="@+id/textViewPlayerSurname"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textViewPlayerSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextPlayerSurname"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/editTextPlayerSurname"
+        android:text="@string/player_surname" />
+
+</RelativeLayout>

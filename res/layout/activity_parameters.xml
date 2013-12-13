@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textViewInternetSetup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Réglages Internet"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAutoDL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refuser de télécharger" />
+        
+    <CheckBox
+        android:id="@+id/checkBoxAutoWifi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Télécharger via WiFi" />
+   
+    <CheckBox
+        android:id="@+id/checkBoxAutoData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Télécharger via données mobiles" />
+
+    <TextView
+        android:id="@+id/textViewWarningData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attention, cela peut entraîner des surcoûts selon votre abonnement."
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
+    <TextView
+        android:id="@+id/textViewPerso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Personnalisation"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/buttonPerso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enregistrer ses informations" />
+
+</LinearLayout>
