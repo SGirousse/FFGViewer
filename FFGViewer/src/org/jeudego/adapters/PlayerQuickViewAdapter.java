@@ -46,7 +46,7 @@ public class PlayerQuickViewAdapter extends ArrayAdapter<Player>{
 		TextView text_view_surname = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewPlayerSurname);
 		text_view_surname.setText(p.getSurname());
 		TextView text_view_rating = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewPlayerRating);
-		text_view_rating.setText(p.getRating());
+		text_view_rating.setText(p.getLevel());
 		TextView text_view_club = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewPlayerClub);
 		text_view_club.setText(p.getClub());
 

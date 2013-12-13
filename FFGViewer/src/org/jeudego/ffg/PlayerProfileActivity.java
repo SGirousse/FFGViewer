@@ -37,7 +37,7 @@ public class PlayerProfileActivity extends Activity{
 	    	TextView text_view_nolicence = (TextView) findViewById(R.id.textViewNoLicence);
 	    	text_view_nolicence.setText(p.getNoLicence());
 	    	TextView text_view_rating = (TextView) findViewById(R.id.textViewRating);
-	    	text_view_rating.setText(p.getRating());
+	    	text_view_rating.setText(p.getLevel());
         }
     }
 }

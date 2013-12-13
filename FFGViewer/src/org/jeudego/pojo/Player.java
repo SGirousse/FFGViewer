@@ -90,6 +90,24 @@ public class Player implements Parcelable {
 	public String toString(){
 		return "ID : "+_id+" \nNom : "+_name+" \nPrenom : "+_surname+"No licence : "+_no_licence+" \nRating : "+_rating+" \nClub: "+_club;
 	}
+	
+	public String getLevel(){
+		String level = "unknown";
+		int rating = Integer.valueOf(_rating);
+		int nb;
+		
+		if(rating>0){ //dan player
+			nb = (rating+100)/100;
+			level = String.valueOf(nb)+"D";
+		}else{ //kyu player
+			nb = (rating-100)/100*-1;
+			if(nb>20) //nothing over 20k (but rating can be more)
+				nb=20;
+			level = String.valueOf(nb)+"K";
+		}
+		
+		return level;
+	}
 
 	public int describeContents() {
 		return 0;
