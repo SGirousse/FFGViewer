@@ -11,11 +11,11 @@
     <string name="last_update_db">Dernière mise à jour :</string>
     <string name="last_update_db_date">Jamais mis à jour.</string>
         
-    <string name="text_button_access_profile">Accéder à votre profil</string>
+    <string name="text_button_access_profile">Mon profil</string>
     <string name="text_button_search">Chercher un joueur</string>
-    <string name="text_button_access_FFG_website">Fédération française de Go</string>
-    <string name="text_button_updating">Réactualiser les informations</string>
-    <string name="text_button_tournament_schedule">Calendrier des tournois</string>
+    <string name="text_button_access_FFG_website">Apprendre le Go</string>
+    <string name="text_button_updating">Télécharger</string>
+    <string name="text_button_tournament_schedule">Calendrier</string>
     
     <!-- Player List Activity -->
     <string name="title_activity_list_player">Sélection d\'un joueur</string>
