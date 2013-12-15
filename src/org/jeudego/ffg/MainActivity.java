@@ -5,14 +5,17 @@ import org.jeudego.listeners.SearchPlayerButton;
 import org.jeudego.listeners.ShowProfileButton;
 import org.jeudego.listeners.UpdatingButton;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Surface;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -26,7 +29,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 	
 	//Version
-	private final String _VERSION = "v0.4.1 - 15.12.2013";
+	private final String _VERSION = "v0.4.2 - 15.12.2013";
 
 	//Listeners
 	private AccessFFGButton _access_ffg_button;
@@ -38,7 +41,12 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i("TRACE", "MainActivity *** public void onCreate(Bundle savedInstanceState) ");
-        setContentView(R.layout.activity_main);
+
+        if( getRotation(this) == 2 ){
+        	setContentView(R.layout.activity_main_landscape);
+        }else{
+        	setContentView(R.layout.activity_main);
+        }
         
         //Set version
         TextView textview_version = (TextView) findViewById(R.id.textViewVersion);
@@ -104,5 +112,19 @@ public class MainActivity extends Activity {
              return true;
        }
        return true;
+    }
+    
+    public int getRotation(Context context){
+    	final int rotation = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getOrientation();
+    	switch (rotation) {
+	    case Surface.ROTATION_0:
+	    	return 1;
+	    case Surface.ROTATION_90:
+	    	return 2;
+	    case Surface.ROTATION_180:
+	    	return -1;
+	    default:
+	    	return -2;
+	   }
     }
 }

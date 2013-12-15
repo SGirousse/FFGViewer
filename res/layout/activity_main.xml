@@ -9,14 +9,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginTop="30dp" >
+        android:layout_marginTop="50dp" >
 	    
 	   <ImageButton
 		    android:id="@+id/buttonShowProfile"
 		    android:layout_width="0dp"
 		    android:layout_height="wrap_content"
 		    android:layout_weight="1"
-		    android:layout_marginBottom="20dp"
     		android:background="@drawable/shape_button_main"
     		android:src="@drawable/ic_myprofile"
     		android:contentDescription="@string/text_button_access_profile" />
@@ -26,10 +25,35 @@
 	        android:layout_width="0dp"
 	       	android:layout_height="wrap_content"
 	    	android:layout_weight="1"
-		    android:layout_marginBottom="20dp"
     		android:background="@drawable/shape_button_main"
     		android:src="@drawable/ic_searchplayer"
     		android:contentDescription="@string/text_button_search" />
+       
+	</LinearLayout>
+	
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+	    
+	    <TextView
+	        android:id="@+id/textViewProfile"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginBottom="20dp"
+	        android:gravity="center"
+	        android:text="@string/text_button_access_profile" />
+	
+	    <TextView
+	        android:id="@+id/textViewSearch"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginBottom="20dp"
+	        android:gravity="center"
+	        android:text="@string/text_button_search" />
        
 	</LinearLayout>
 
@@ -44,7 +68,6 @@
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
-			android:layout_marginBottom="10dp"
 			android:background="@drawable/shape_button_main"
 	   		android:src="@drawable/ic_calendar"
 	   		android:contentDescription="@string/text_button_tournament_schedule" />
@@ -54,13 +77,38 @@
 	        android:layout_width="0dp"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
-	       	android:layout_marginBottom="10dp"
 	   		android:src="@drawable/ic_news"
 	   		android:background="@drawable/shape_button_main"
 	   		android:contentDescription="@string/text_button_access_FFG_website" />
 
    	</LinearLayout>
    	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+	    
+	    <TextView
+	        android:id="@+id/textViewTournaments"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginBottom="20dp"
+	        android:gravity="center"
+	        android:text="@string/text_button_tournament_schedule" />
+	
+	    <TextView
+	        android:id="@+id/textViewNews"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginBottom="20dp"
+	        android:gravity="center"
+	        android:text="@string/text_button_access_FFG_website" />
+       
+	</LinearLayout>
+	
 	<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,9 +120,8 @@
 	        android:layout_width="0dp"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
-	       	android:layout_marginBottom="10dp"
 	   		android:background="@drawable/shape_button_main"
-	   		android:src="@drawable/ic_news"
+	   		android:src="@drawable/ic_refresh"
 	   		android:contentDescription="@string/text_button_updating" />
 	    
    	    <ImageButton
@@ -82,32 +129,71 @@
 	        android:layout_width="0dp"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
-	       	android:layout_marginBottom="10dp"
 	   		android:background="@drawable/shape_button_main"
 	   		android:src="@drawable/ic_settings"
-	   		android:contentDescription="settings" />
+	   		android:contentDescription="@string/text_button_settings" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textViewVersion"
-        android:layout_width="wrap_content"
+	<LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="version_number"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/textViewLastMAJ"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/last_update_db"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/textViewLastMAJDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/last_update_db_date"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:orientation="horizontal"
+        android:weightSum="2" >
+	    
+	    <TextView
+	        android:id="@+id/textViewUpdating"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginBottom="20dp"
+	        android:gravity="center"
+	        android:text="@string/text_button_updating" />
+	
+	    <TextView
+	        android:id="@+id/textViewSettings"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginBottom="20dp"
+	        android:gravity="center"
+	        android:text="@string/text_button_settings" />
+       
+	</LinearLayout>
+	
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:weightSum="3" >
+	    
+	    <TextView
+	        android:id="@+id/textViewVersion"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"	        
+	        android:layout_weight="1"
+	        android:text="version_number"
+	        android:layout_gravity="bottom"
+	        android:textSize="12sp" />
+	
+	    <TextView
+	        android:id="@+id/textViewLastMAJ"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_gravity="bottom"
+	        android:text="@string/last_update_db"
+	        android:textSize="12sp" />
+	
+	    <TextView
+	        android:id="@+id/textViewLastMAJDate"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_gravity="bottom"
+	        android:text="@string/last_update_db_date"
+	        android:textSize="12sp" />
+	    
+    </LinearLayout>
 
 </LinearLayout>
