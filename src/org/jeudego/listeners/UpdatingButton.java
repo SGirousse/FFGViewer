@@ -7,24 +7,21 @@ import org.jeudego.database.PlayerDataSource;
 import org.jeudego.ffg.MainActivity;
 import org.jeudego.pojo.Player;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class UpdatingButton implements OnClickListener{
 
-	public Button _update_button;
+	public ImageButton _update_button;
 	public MainActivity _main_activity;
 	public TextView _last_maj;
 	
-	public UpdatingButton(MainActivity main_activity, Button update_button, TextView last_maj){
+	public UpdatingButton(MainActivity main_activity, ImageButton update_button, TextView last_maj){
 		this._main_activity = main_activity;
 		this._update_button = update_button;
 		this._last_maj = last_maj;

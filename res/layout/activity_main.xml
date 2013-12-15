@@ -10,68 +10,63 @@
         android:orientation="horizontal"
         android:weightSum="2" >
 	    
-	   <Button
+	   <ImageButton
 		    android:id="@+id/buttonShowProfile"
 		    android:layout_width="0dp"
 		    android:layout_height="wrap_content"
 		    android:layout_weight="1"
-		    android:gravity="left|center_vertical"
+		    android:layout_marginBottom="20dp"
 		    android:text="@string/text_button_access_profile" 
-    		android:background="@drawable/shape_button_main" />
+    		android:background="@drawable/shape_button_main"
+    		android:src="@drawable/ic_myprofile"
+    		android:contentDescription="@string/text_button_access_profile" />
 	   
-       <Button
+       <ImageButton
 	        android:id="@+id/buttonSearch"
 	        android:layout_width="0dp"
 	       	android:layout_height="wrap_content"
 	    	android:layout_weight="1"
-	       	android:gravity="left|center_vertical" 
+		    android:layout_marginBottom="20dp"
 	       	android:text="@string/text_button_search" 
-    		android:background="@drawable/shape_button_main" />
+    		android:background="@drawable/shape_button_main"
+    		android:src="@drawable/ic_searchplayer"
+    		android:contentDescription="@string/text_button_search" />
        
 	</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2" >
-       
-    	<Button
-			android:id="@+id/buttonTournamentSchedule"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:gravity="left|center_vertical"
-			android:text="@string/text_button_tournament_schedule" 
-    		android:background="@drawable/shape_button_main" />
-    	   
-	    <Button
-	        android:id="@+id/buttonGoFFG"
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-  			android:layout_weight="1"
-	       	android:gravity="left|center_vertical"
-	        android:text="@string/text_button_access_FFG_website" 
-    		android:background="@drawable/shape_button_main" />
 
-	</LinearLayout>
-	
-    <LinearLayout
-        android:layout_width="match_parent"
+   	<ImageButton
+		android:id="@+id/buttonTournamentSchedule"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginBottom="10dp"
+		android:text="@string/text_button_tournament_schedule" 
+   		android:background="@drawable/ic_calendar"
+   		android:contentDescription="@string/text_button_tournament_schedule" />
+   	   
+    <ImageButton
+        android:id="@+id/buttonGoFFG"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2" >
-	    
-	    <Button
-	        android:id="@+id/buttonUpdating"
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	       	android:layout_weight="2"
-	       	android:gravity="left|center_vertical"
-	       	android:text="@string/text_button_updating" 
-    		android:background="@drawable/shape_button_main" />
-	    
-	</LinearLayout>
+        android:layout_gravity="center_horizontal"
+       	android:layout_marginBottom="10dp"
+   		android:src="@drawable/ic_news"
+   		android:background="@drawable/shape_button_main"
+   		android:contentDescription="@string/text_button_access_FFG_website" />
+
+    
+    <ImageButton
+        android:id="@+id/buttonUpdating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+       	android:layout_marginBottom="10dp"
+       	android:text="@string/text_button_updating" 
+   		android:background="@drawable/shape_button_main"
+   		android:src="@drawable/ic_news"
+   		android:contentDescription="@string/text_button_updating" />
+
 
     <TextView
         android:id="@+id/textViewVersion"
