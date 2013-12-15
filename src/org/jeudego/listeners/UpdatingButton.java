@@ -7,6 +7,8 @@ import org.jeudego.database.PlayerDataSource;
 import org.jeudego.ffg.MainActivity;
 import org.jeudego.pojo.Player;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -53,13 +55,18 @@ public class UpdatingButton implements OnClickListener{
         player_dao.insertPlayer(new Player(9,"CLAIR", "Jocelyn", "7445758", "-2000", "60Pa"));
 		
         player_dao.close();
-		
+        
 		//Re-enabled at the end
 		this._update_button.setEnabled(true);
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		this._last_maj.setText(dateFormat.format(new Date()));
 		
-		toaster_msg = "Base de joueurs mise ├а jour.";
+        SharedPreferences preferences = _main_activity.getSharedPreferences("UPDATE_FILE", Context.MODE_WORLD_WRITEABLE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("db_update", dateFormat.format(new Date()));
+        editor.commit();
+		
+		toaster_msg = "Base de joueurs mise ра jour.";
 
 		Toast t = Toast.makeText(_main_activity.getApplicationContext(), toaster_msg, Toast.LENGTH_SHORT);
 		t.show();

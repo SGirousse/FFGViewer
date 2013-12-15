@@ -8,7 +8,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="2" >
+        android:weightSum="2"
+        android:layout_marginTop="30dp" >
 	    
 	   <ImageButton
 		    android:id="@+id/buttonShowProfile"
@@ -16,7 +17,6 @@
 		    android:layout_height="wrap_content"
 		    android:layout_weight="1"
 		    android:layout_marginBottom="20dp"
-		    android:text="@string/text_button_access_profile" 
     		android:background="@drawable/shape_button_main"
     		android:src="@drawable/ic_myprofile"
     		android:contentDescription="@string/text_button_access_profile" />
@@ -27,46 +27,67 @@
 	       	android:layout_height="wrap_content"
 	    	android:layout_weight="1"
 		    android:layout_marginBottom="20dp"
-	       	android:text="@string/text_button_search" 
     		android:background="@drawable/shape_button_main"
     		android:src="@drawable/ic_searchplayer"
     		android:contentDescription="@string/text_button_search" />
        
 	</LinearLayout>
 
-
-   	<ImageButton
-		android:id="@+id/buttonTournamentSchedule"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center_horizontal"
-		android:layout_marginBottom="10dp"
-		android:text="@string/text_button_tournament_schedule" 
-   		android:background="@drawable/ic_calendar"
-   		android:contentDescription="@string/text_button_tournament_schedule" />
-   	   
-    <ImageButton
-        android:id="@+id/buttonGoFFG"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-       	android:layout_marginBottom="10dp"
-   		android:src="@drawable/ic_news"
-   		android:background="@drawable/shape_button_main"
-   		android:contentDescription="@string/text_button_access_FFG_website" />
+        android:orientation="horizontal"
+        android:weightSum="2" >
+       
+	   	<ImageButton
+			android:id="@+id/buttonTournamentSchedule"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:layout_marginBottom="10dp"
+			android:background="@drawable/shape_button_main"
+	   		android:src="@drawable/ic_calendar"
+	   		android:contentDescription="@string/text_button_tournament_schedule" />
+	   	   
+	    <ImageButton
+	        android:id="@+id/buttonGoFFG"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	       	android:layout_marginBottom="10dp"
+	   		android:src="@drawable/ic_news"
+	   		android:background="@drawable/shape_button_main"
+	   		android:contentDescription="@string/text_button_access_FFG_website" />
 
+   	</LinearLayout>
+   	
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2" >
     
-    <ImageButton
-        android:id="@+id/buttonUpdating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-       	android:layout_marginBottom="10dp"
-       	android:text="@string/text_button_updating" 
-   		android:background="@drawable/shape_button_main"
-   		android:src="@drawable/ic_news"
-   		android:contentDescription="@string/text_button_updating" />
+	    <ImageButton
+	        android:id="@+id/buttonUpdating"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	       	android:layout_marginBottom="10dp"
+	   		android:background="@drawable/shape_button_main"
+	   		android:src="@drawable/ic_news"
+	   		android:contentDescription="@string/text_button_updating" />
+	    
+   	    <ImageButton
+	        android:id="@+id/buttonSettings"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	       	android:layout_marginBottom="10dp"
+	   		android:background="@drawable/shape_button_main"
+	   		android:src="@drawable/ic_settings"
+	   		android:contentDescription="settings" />
 
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textViewVersion"

@@ -26,7 +26,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 	
 	//Version
-	private final String _VERSION = "v0.3.2 - 12.12.2013";
+	private final String _VERSION = "v0.4.1 - 15.12.2013";
 
 	//Listeners
 	private AccessFFGButton _access_ffg_button;
@@ -45,11 +45,22 @@ public class MainActivity extends Activity {
         textview_version.setText(this._VERSION);
         SharedPreferences preferences = getSharedPreferences("IDENT_USER_FILE", Context.MODE_WORLD_WRITEABLE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("User_surname", "SimÃ©on");
+        editor.putString("User_surname", "Siméon");
         editor.putString("User_name", "Girousse");
         editor.putString("User_licence", "1100109");
         editor.commit();
         
+		//Get the player informations
+		preferences = getSharedPreferences("UPDATE_FILE", Context.MODE_PRIVATE);
+		String db_update = preferences.getString("db_update","");
+        
+		if(db_update.equals("")){
+			db_update = "Jamais mis à jour";
+		}
+		
+		TextView tv_update = (TextView) findViewById(R.id.textViewLastMAJDate);
+		tv_update.setText(db_update);
+		
         // --- Listeners --- //
         //Web site access
         this._access_ffg_button = new AccessFFGButton(this);
