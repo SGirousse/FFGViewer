@@ -46,8 +46,6 @@ public class PlayerListActivity extends Activity {
         _list_of_players = new ArrayList<Player>();
         _list_of_players = _player_dao.getAllPlayers();
         
-        Log.i("TRACE", "Nombre de joueurs : "+_list_of_players.size());
-        
         _player_dao.close();
 
         // --- Adapters --- //

@@ -43,8 +43,8 @@
        </activity>
        
        <activity
-            android:name=".TournamentScheduleActivity"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
+            android:name=".TournamentsActivity"
+            android:label="@string/title_activity_main" >
        </activity>
        
        <activity

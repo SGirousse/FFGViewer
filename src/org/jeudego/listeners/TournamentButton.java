@@ -1,7 +1,7 @@
 package org.jeudego.listeners;
 
 import org.jeudego.ffg.MainActivity;
-import org.jeudego.ffg.TournamentScheduleActivity;
+import org.jeudego.ffg.TournamentsActivity;
 
 import android.content.Intent;
 import android.view.View;
@@ -18,7 +18,7 @@ public class TournamentButton implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		//Ask for the tournament schedule activity
-		Intent i = new Intent(_main_activity.getBaseContext(), TournamentScheduleActivity.class );		
+		Intent i = new Intent(_main_activity.getBaseContext(), TournamentsActivity.class );		
 		_main_activity.startActivity(i);
 		
 	}

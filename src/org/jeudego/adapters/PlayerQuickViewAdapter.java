@@ -21,9 +21,9 @@ public class PlayerQuickViewAdapter extends ArrayAdapter<Player>{
 	public PlayerQuickViewAdapter(Context context, int layout_id, List<Player> objects){
 		super(context, layout_id, objects);
 		
-		this._player_list = objects;
-		this._context = context;
-		this._layout_to_inflate_id = layout_id;
+		_player_list = objects;
+		_context = context;
+		_layout_to_inflate_id = layout_id;
 	}
 	
 	@Override
@@ -31,15 +31,12 @@ public class PlayerQuickViewAdapter extends ArrayAdapter<Player>{
 		Log.i("TRACE", "PlayerQuickViewAdapter *** public View getView(int position, View convertView, ViewGroup parent)");
 		
 		if (convertView==null) {
-			Log.i("TRACE","INFLATER");
-			LayoutInflater layoutInflater = (LayoutInflater)this._context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			convertView = layoutInflater.inflate(this._layout_to_inflate_id, parent, false);   
+			LayoutInflater layoutInflater = (LayoutInflater) _context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			convertView = layoutInflater.inflate(_layout_to_inflate_id, parent, false);   
 		} 
 		
 	    //Player to update
-		Player p = this._player_list.get(position);
-
-		Log.i("TRACE", "PlayerQuickViewAdapter *** "+p.getName()+" "+position);
+		Player p = _player_list.get(position);
 		
 		TextView text_view_name = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewPlayerName);		
 		text_view_name.setText(p.getName());
