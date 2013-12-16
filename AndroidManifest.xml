@@ -25,8 +25,12 @@
         
        <activity
             android:name=".PlayerListActivity"
+<<<<<<< HEAD
             android:label="@string/title_activity_list_player"
             android:configChanges="keyboardHidden|orientation|screenSize" >
+=======
+            android:label="@string/title_activity_list_player" >
+>>>>>>> 61c5c2c28cc1c1ca1e7ead7582666d46cd7b4a57
         </activity>
         
         <activity
