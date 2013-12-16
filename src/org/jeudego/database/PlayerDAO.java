@@ -11,11 +11,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-public class PlayerDataSource {
+public class PlayerDAO {
 	private SQLiteDatabase _players_db;
 	private PlayersDBHelper _players_db_helper;
 	
-	public PlayerDataSource(Context context){
+	public PlayerDAO(Context context){
 		_players_db_helper = new PlayersDBHelper(context);
 	}
 	
@@ -39,7 +39,7 @@ public class PlayerDataSource {
 	 * @see Player
 	 */
 	public long insertPlayer(Player p){
-		Log.i("TRACE_DB", "PlayerDataSource *** public long insertPlayer(Player p)");
+		Log.i("TRACE_DB", "PlayerDAO *** public long insertPlayer(Player p)");
 		
 		ContentValues values = new ContentValues();
 		
@@ -63,7 +63,7 @@ public class PlayerDataSource {
 	 * @see Player
 	 */
 	public int updatePlayer(int id, Player p){
-		Log.i("TRACE_DB", "PlayerDataSource *** public int updatePlayer(int id, Player p)");
+		Log.i("TRACE_DB", "PlayerDAO *** public int updatePlayer(int id, Player p)");
 		ContentValues values = new ContentValues();
 		
 		values.put(_players_db_helper.COL_PLAYER_ID, p.getId());
@@ -83,7 +83,7 @@ public class PlayerDataSource {
 	 * @return int
 	 */
 	public int deletePlayerWithId(int id){
-		Log.i("TRACE_DB", "PlayerDataSource *** public int deletePlayerWithId(int id)");
+		Log.i("TRACE_DB", "PlayerDAO *** public int deletePlayerWithId(int id)");
 		
 		return _players_db.delete(_players_db_helper.TABLE_PLAYER, _players_db_helper.COL_PLAYER_ID + " = " +id, null);
 	}
@@ -94,7 +94,7 @@ public class PlayerDataSource {
 	 * @return int
 	 */
 	public int deleteAllPlayers(){
-		Log.i("TRACE_DB", "PlayerDataSource *** public int deleteAllPlayers()");
+		Log.i("TRACE_DB", "PlayerDAO *** public int deleteAllPlayers()");
 		
 		return _players_db.delete(_players_db_helper.TABLE_PLAYER, null, null);
 	}
@@ -105,7 +105,7 @@ public class PlayerDataSource {
 	 * @return List<Player>
 	 */
 	public List<Player> getAllPlayers(){
-		Log.i("TRACE_DB", "PlayerDataSource *** public List<Player> getAllPlayers()");
+		Log.i("TRACE_DB", "PlayerDAO *** public List<Player> getAllPlayers()");
 		
 	    List<Player> p_list = new ArrayList<Player>();
 
@@ -144,7 +144,7 @@ public class PlayerDataSource {
 	 * @see Player
 	 */
 	public Player cursorToPlayer(Cursor c){
-		Log.i("TRACE_DB", "PlayerDataSource *** public Player cursorToPlayer(Cursor c)");
+		Log.i("TRACE_DB", "PlayerDAO *** public Player cursorToPlayer(Cursor c)");
 		Player p = new Player();
 		
 		p.setId(c.getInt(0));

@@ -3,7 +3,7 @@ package org.jeudego.listeners;
 import java.util.List;
 
 import org.jeudego.adapters.PlayerQuickViewAdapter;
-import org.jeudego.database.PlayerDataSource;
+import org.jeudego.database.PlayerDAO;
 import org.jeudego.ffg.MainActivity;
 import org.jeudego.ffg.PlayerListActivity;
 import org.jeudego.pojo.Player;
@@ -41,7 +41,7 @@ public class GoSearchPlayerButton implements OnClickListener{
 		boolean toAdd = true;
 		String name = _name_edit_text.getText().toString();
 		String surname = _surname_edit_text.getText().toString();
-		PlayerDataSource player_dao = new PlayerDataSource(_player_list_activity);
+		PlayerDAO player_dao = new PlayerDAO(_player_list_activity);
 		
 		//Clean previous list
 		_player_list.clear();

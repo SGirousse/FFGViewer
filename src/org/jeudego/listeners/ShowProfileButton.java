@@ -1,6 +1,6 @@
 package org.jeudego.listeners;
 
-import org.jeudego.database.PlayerDataSource;
+import org.jeudego.database.PlayerDAO;
 import org.jeudego.ffg.MainActivity;
 import org.jeudego.ffg.PlayerProfileActivity;
 import org.jeudego.pojo.Player;
@@ -23,7 +23,7 @@ public class ShowProfileButton implements OnClickListener{
 	private MainActivity _main_activity;
 	
 	public ShowProfileButton(MainActivity main_activity){
-		this._main_activity = main_activity;
+		_main_activity = main_activity;
 	}
 	
 	public void onClick(View v) {
@@ -34,7 +34,7 @@ public class ShowProfileButton implements OnClickListener{
 		String no_licence = preferences.getString("User_licence","");
 		
 		if(!no_licence.equalsIgnoreCase("")){
-			PlayerDataSource player_dao = new PlayerDataSource(_main_activity);
+			PlayerDAO player_dao = new PlayerDAO(_main_activity);
 			
 			player_dao.open(true);
 			Player p = player_dao.getPlayerByNoLicence(no_licence);

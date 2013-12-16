@@ -3,6 +3,7 @@ package org.jeudego.ffg;
 import org.jeudego.listeners.AccessFFGButton;
 import org.jeudego.listeners.SearchPlayerButton;
 import org.jeudego.listeners.ShowProfileButton;
+import org.jeudego.listeners.TournamentButton;
 import org.jeudego.listeners.UpdatingButton;
 
 import android.app.Activity;
@@ -36,6 +37,7 @@ public class MainActivity extends Activity {
 	private ShowProfileButton _show_profile_button;
 	private SearchPlayerButton _search_player_button;
 	private UpdatingButton _updating_button;
+	private TournamentButton _tournament_button;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,25 +73,30 @@ public class MainActivity extends Activity {
 		
         // --- Listeners --- //
         //Web site access
-        this._access_ffg_button = new AccessFFGButton(this);
+        _access_ffg_button = new AccessFFGButton(this);
         ImageButton access_ffg_button = (ImageButton) findViewById(R.id.buttonGoFFG);
-        access_ffg_button.setOnClickListener(this._access_ffg_button);
+        access_ffg_button.setOnClickListener(_access_ffg_button);
         
         //Show own profile
-        this._show_profile_button = new ShowProfileButton(this);
+        _show_profile_button = new ShowProfileButton(this);
         ImageButton show_profile_button = (ImageButton) findViewById(R.id.buttonShowProfile);
-        show_profile_button.setOnClickListener(this._show_profile_button);
+        show_profile_button.setOnClickListener(_show_profile_button);
         
         //Search player
-        this._search_player_button = new SearchPlayerButton(this);
+        _search_player_button = new SearchPlayerButton(this);
         ImageButton search_player_button = (ImageButton) findViewById(R.id.buttonSearch);
-        search_player_button.setOnClickListener(this._search_player_button);
+        search_player_button.setOnClickListener(_search_player_button);
+        
+        //Tournaments
+        _tournament_button = new TournamentButton(this);
+        ImageButton tournament_button = (ImageButton) findViewById(R.id.buttonTournamentSchedule);
+        tournament_button.setOnClickListener(_tournament_button);
         
         //Update DB
         ImageButton update_button = (ImageButton) findViewById(R.id.buttonUpdating);
         TextView textview_last_update_date = (TextView) findViewById(R.id.textViewLastMAJDate);
-        this._updating_button = new UpdatingButton(this, update_button, textview_last_update_date);
-        update_button.setOnClickListener(this._updating_button);
+        _updating_button = new UpdatingButton(this, update_button, textview_last_update_date);
+        update_button.setOnClickListener(_updating_button);
         
     }
 

@@ -3,7 +3,7 @@ package org.jeudego.listeners;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.jeudego.database.PlayerDataSource;
+import org.jeudego.database.PlayerDAO;
 import org.jeudego.ffg.MainActivity;
 import org.jeudego.pojo.Player;
 
@@ -35,7 +35,7 @@ public class UpdatingButton implements OnClickListener{
 		String toaster_msg = "Update message";
 
 		//Player list
-		PlayerDataSource player_dao = new PlayerDataSource(_main_activity);
+		PlayerDAO player_dao = new PlayerDAO(_main_activity);
 		
 		//While it's downloading, avoid multiple click
 		_update_button.setEnabled(false);

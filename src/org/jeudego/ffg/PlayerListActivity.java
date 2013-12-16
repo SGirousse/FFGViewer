@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.jeudego.adapters.PlayerQuickViewAdapter;
-import org.jeudego.database.PlayerDataSource;
+import org.jeudego.database.PlayerDAO;
 import org.jeudego.listeners.GoSearchPlayerButton;
 import org.jeudego.listeners.PlayerItem;
 import org.jeudego.pojo.Player;
@@ -30,7 +30,7 @@ public class PlayerListActivity extends Activity {
 	//Adapters
 	private PlayerQuickViewAdapter _player_quick_view_adapter;
 	//Player list
-	private PlayerDataSource _player_dao;
+	private PlayerDAO _player_dao;
 	private List<Player> _list_of_players;
 	
     @Override
@@ -40,7 +40,7 @@ public class PlayerListActivity extends Activity {
         setContentView(R.layout.activity_list_player);
         
         //Player list initialization
-        _player_dao = new PlayerDataSource(this);
+        _player_dao = new PlayerDAO(this);
         _player_dao.open(false);
         
         _list_of_players = new ArrayList<Player>();
