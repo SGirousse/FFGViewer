@@ -2,20 +2,22 @@
 
     <!-- General -->
     <string name="app_name">Go Viewer</string>
-    <string name="menu_settings">Paramètres</string>
+    <string name="menu_settings">Réglages</string>
+    <string name="menu_comment">Envoyer un commentaire</string>
     
     <!-- Main Activity -->
-    <string name="title_activity_main">Menu principal</string>
+    <string name="title_activity_main">Go Viewer</string>
     
     <string name="hello">Bonjour</string>
     <string name="last_update_db">Dernière mise à jour :</string>
     <string name="last_update_db_date">Jamais mis à jour.</string>
         
-    <string name="text_button_access_profile">Accéder à votre profil</string>
-    <string name="text_button_search">Chercher un joueur</string>
-    <string name="text_button_access_FFG_website">Fédération française de Go</string>
-    <string name="text_button_updating">Réactualiser les informations</string>
-    <string name="text_button_tournament_schedule">Calendrier des tournois</string>
+    <string name="text_button_access_profile">Profil</string>
+    <string name="text_button_search">Joueurs</string>
+    <string name="text_button_access_FFG_website">News</string>
+    <string name="text_button_updating">Rafraîchir</string>
+    <string name="text_button_tournament_schedule">Tournois</string>
+    <string name="text_button_settings">Réglages</string>
     
     <!-- Player List Activity -->
     <string name="title_activity_list_player">Sélection d\'un joueur</string>
@@ -27,6 +29,7 @@
     <string name="wait_access_website_ffg">Chargement des données &#8230;</string>
     
     <!-- Player Profile Activity -->
+    <string name="title_activity_profile_player">Licence FFG</string>
     <string name="licenced_to">Licencié à </string>
     <string name="tournament_list">Participations aux tournois :</string>
     <string name="responsibilities_list">Responsabilités :</string>

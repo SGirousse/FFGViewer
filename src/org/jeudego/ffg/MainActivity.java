@@ -5,15 +5,18 @@ import org.jeudego.listeners.SearchPlayerButton;
 import org.jeudego.listeners.ShowProfileButton;
 import org.jeudego.listeners.UpdatingButton;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.view.Surface;
+import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 /**
@@ -26,7 +29,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 	
 	//Version
-	private final String _VERSION = "v0.3.2 - 12.12.2013";
+	private final String _VERSION = "v0.4.2 - 15.12.2013";
 
 	//Listeners
 	private AccessFFGButton _access_ffg_button;
@@ -38,36 +41,52 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i("TRACE", "MainActivity *** public void onCreate(Bundle savedInstanceState) ");
-        setContentView(R.layout.activity_main);
+
+        if( getRotation(this) == 2 ){
+        	setContentView(R.layout.activity_main_landscape);
+        }else{
+        	setContentView(R.layout.activity_main);
+        }
         
         //Set version
         TextView textview_version = (TextView) findViewById(R.id.textViewVersion);
         textview_version.setText(this._VERSION);
         SharedPreferences preferences = getSharedPreferences("IDENT_USER_FILE", Context.MODE_WORLD_WRITEABLE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("User_surname", "SimÃ©on");
+        editor.putString("User_surname", "Siméon");
         editor.putString("User_name", "Girousse");
         editor.putString("User_licence", "1100109");
         editor.commit();
         
+		//Get the player informations
+		preferences = getSharedPreferences("UPDATE_FILE", Context.MODE_PRIVATE);
+		String db_update = preferences.getString("db_update","");
+        
+		if(db_update.equals("")){
+			db_update = "Jamais mis à jour";
+		}
+		
+		TextView tv_update = (TextView) findViewById(R.id.textViewLastMAJDate);
+		tv_update.setText(db_update);
+		
         // --- Listeners --- //
         //Web site access
         this._access_ffg_button = new AccessFFGButton(this);
-        Button access_ffg_button = (Button) findViewById(R.id.buttonGoFFG);
+        ImageButton access_ffg_button = (ImageButton) findViewById(R.id.buttonGoFFG);
         access_ffg_button.setOnClickListener(this._access_ffg_button);
         
         //Show own profile
         this._show_profile_button = new ShowProfileButton(this);
-        Button show_profile_button = (Button) findViewById(R.id.buttonShowProfile);
+        ImageButton show_profile_button = (ImageButton) findViewById(R.id.buttonShowProfile);
         show_profile_button.setOnClickListener(this._show_profile_button);
         
         //Search player
         this._search_player_button = new SearchPlayerButton(this);
-        Button search_player_button = (Button) findViewById(R.id.buttonSearch);
+        ImageButton search_player_button = (ImageButton) findViewById(R.id.buttonSearch);
         search_player_button.setOnClickListener(this._search_player_button);
         
         //Update DB
-        Button update_button = (Button) findViewById(R.id.buttonUpdating);
+        ImageButton update_button = (ImageButton) findViewById(R.id.buttonUpdating);
         TextView textview_last_update_date = (TextView) findViewById(R.id.textViewLastMAJDate);
         this._updating_button = new UpdatingButton(this, update_button, textview_last_update_date);
         update_button.setOnClickListener(this._updating_button);
@@ -80,7 +99,8 @@ public class MainActivity extends Activity {
         return true;
     }
     
-    public boolean onOptionsItemSelected(MenuItem item) {
+    @Override
+	public boolean onOptionsItemSelected(MenuItem item) {
        Log.i("TRACE", "MainActivity *** public boolean onOptionsItemSelected(MenuItem item) ");
        //According to item id
        switch (item.getItemId()) 
@@ -92,5 +112,19 @@ public class MainActivity extends Activity {
              return true;
        }
        return true;
+    }
+    
+    public int getRotation(Context context){
+    	final int rotation = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getOrientation();
+    	switch (rotation) {
+	    case Surface.ROTATION_0:
+	    	return 1;
+	    case Surface.ROTATION_90:
+	    	return 2;
+	    case Surface.ROTATION_180:
+	    	return -1;
+	    default:
+	    	return -2;
+	   }
     }
 }
