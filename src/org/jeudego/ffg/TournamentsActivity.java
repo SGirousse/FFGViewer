@@ -3,23 +3,23 @@ package org.jeudego.ffg;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jeudego.adapters.PlayerQuickViewAdapter;
 import org.jeudego.adapters.TournamentQuickViewAdapter;
+import org.jeudego.listeners.FollowSwitch;
 import org.jeudego.pojo.Tournament;
 
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.CalendarContract;
-import android.text.format.Time;
 import android.util.Log;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.Switch;
 
 public class TournamentsActivity extends Activity{
 
 	private List<Tournament> _t_list;
 	private TournamentQuickViewAdapter _tournament_quick_view_adapter;
+	private FollowSwitch _follow_switch;
     private Cursor mCursor = null;
     private static final String[] COLS = new String[]
     		{ CalendarContract.Events.TITLE, CalendarContract.Events.DTSTART};
@@ -32,9 +32,9 @@ public class TournamentsActivity extends Activity{
         
         _t_list = new ArrayList<Tournament>();
         
-        _t_list.add(new Tournament("Tournoi interne de Pau", "date...", true));
-        _t_list.add(new Tournament("Paris-Meijin", "date...", false));
-        _t_list.add(new Tournament("1er tour du championnat de France - Pau/Tarbes", "date...", false));
+        _t_list.add(new Tournament("Tournoi interne de Pau", "Best tournament ever ? Bon peut-être pas mais ... il est cool quand même ! ","date...", true));
+        _t_list.add(new Tournament("Paris-Meijin","Tournoi en 3 ctg : A, B et C. Dai Junfu vainqueur des 42 dernières éditions attendra de pied ferme son prochain adversaire !", "date...", false));
+        _t_list.add(new Tournament("1er tour du championnat de France - Pau/Tarbes", "Sans peurs ni reproches ... tous les licenciés sont convier à jouer la qualification pour le 2nd tour.", "date...", false));
         
         // --- Adapters --- //
         //Each tournament to show
@@ -42,7 +42,13 @@ public class TournamentsActivity extends Activity{
         //Add it to listView
         ListView lv = (ListView) findViewById(R.id.listViewTournaments);
         lv.setAdapter(_tournament_quick_view_adapter);
+        //lv.setOnClickListener(l)
+        // --- Listeners --- //
+        /*_follow_switch = new FollowSwitch();
+        Switch follow_switch = (Switch) findViewById(R.id.switchFollow);
+        follow_switch.setOnCheckedChangeListener(_follow_switch);*/
         
+        /*
         Time dayStart = new Time();
         dayStart.setToNow();
         dayStart.hour=0;
@@ -57,7 +63,7 @@ public class TournamentsActivity extends Activity{
         while(mCursor.moveToNext()){
         	tv.setText(tv.getText()+" --- "+mCursor.getString(0));
         }
-        }
+        }*/
         
         //http://developer.android.com/reference/android/provider/CalendarContract.Events.html
         

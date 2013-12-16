@@ -2,6 +2,7 @@ package org.jeudego.adapters;
 
 import java.util.List;
 
+import org.jeudego.ffg.R;
 import org.jeudego.pojo.Tournament;
 
 import android.content.Context;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class TournamentQuickViewAdapter extends ArrayAdapter<Tournament>{
@@ -40,7 +42,11 @@ public class TournamentQuickViewAdapter extends ArrayAdapter<Tournament>{
 		
 		TextView text_view_tournament_title = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewTournamentTitle);		
 		text_view_tournament_title.setText(t.getTitle());
-
+		TextView text_view_tournament_description = (TextView) convertView.findViewById(org.jeudego.ffg.R.id.textViewTournamentDescription);		
+		text_view_tournament_description.setText(t.getDescription());
+		Switch switch_tournament = (Switch) convertView.findViewById(R.id.switchFollow);
+		switch_tournament.setChecked(t.getFollow());
+		
 		return convertView;
 	}
 }

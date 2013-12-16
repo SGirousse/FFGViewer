@@ -34,6 +34,14 @@
     <string name="tournament_list">Participations aux tournois :</string>
     <string name="responsibilities_list">Responsabilités :</string>
     
+    <!-- Tournaments Activity -->
+    <string name="title_activity_tournaments">Les tournois</string>
+    
+    <!-- Tournament Item -->
+    <string name="tournament_title">Titre du tournoi</string>
+    <string name="tournament_follow">Suivre ce tournoi :</string>
+    <string name="tournament_description">Description du tournoi :</string>
+    
     <!-- Parameters Activity -->
     <string name="title_parameters_activity">Réglages </string>
 </resources>

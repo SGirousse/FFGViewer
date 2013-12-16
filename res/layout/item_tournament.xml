@@ -5,29 +5,26 @@
 
     <TextView
         android:id="@+id/textViewTournamentTitle"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="Large Text"
+        android:text="@string/tournament_title"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textViewTournamentTitle"
-        android:text="TextView" />
+	<TextView
+	    android:id="@+id/textViewTournamentDescription"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_alignParentRight="true"
+	    android:layout_below="@+id/textViewTournamentTitle"
+	    android:text="@string/tournament_description" />
 
-    <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textViewTournamentTitle"
-        android:layout_alignBottom="@+id/textViewTournamentTitle"
-        android:layout_alignParentRight="true"
-        android:text="Switch" />
-    
+	<Switch
+	    android:id="@+id/switchFollow"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@+id/textViewTournamentDescription"
+	    android:text="@string/tournament_follow" />
+   	   
 </RelativeLayout>
